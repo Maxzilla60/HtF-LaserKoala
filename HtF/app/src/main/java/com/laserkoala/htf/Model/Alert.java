@@ -9,7 +9,7 @@ public class Alert {
     private int id;
     private String username;
     private String description;
-    private Location location;
+    private LatLng location;
     private Image photo;
     private LocalDateTime dateTime;
 
