@@ -1,0 +1,17 @@
+Users
+	username
+	password
+	admin
+
+Alerts
+	id
+	description
+	latitude
+	longitude
+	photo
+
+Users-Location
+	username
+	latitude
+	longitude
+	datetime
