@@ -1,7 +1,9 @@
-package com.laserkoala.htf;
+package com.laserkoala.htf.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.laserkoala.htf.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

@@ -2,6 +2,7 @@ package com.laserkoala.htf.Repository;
 
 import com.laserkoala.htf.Model.User;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.google.android.gms.maps.model.LatLng;
 

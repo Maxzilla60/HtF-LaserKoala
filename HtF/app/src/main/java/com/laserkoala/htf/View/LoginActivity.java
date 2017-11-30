@@ -1,13 +1,15 @@
-package com.laserkoala.htf;
+package com.laserkoala.htf.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class AdminMenuActivity extends AppCompatActivity {
+import com.laserkoala.htf.R;
+
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_menu);
+        setContentView(R.layout.activity_login);
     }
 }

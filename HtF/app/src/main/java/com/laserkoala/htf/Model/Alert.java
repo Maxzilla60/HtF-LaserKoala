@@ -3,6 +3,9 @@ package com.laserkoala.htf.Model;
 import android.location.Location;
 import android.media.Image;
 
+import com.google.android.gms.maps.model.LatLng;
+
+import java.sql.Date;
 import java.time.LocalDateTime;
 
 public class Alert {
@@ -11,9 +14,9 @@ public class Alert {
     private String description;
     private LatLng location;
     private Image photo;
-    private LocalDateTime dateTime;
+    private Date dateTime;
 
-    public Alert(int id, String username, String description, Location location, Image photo, LocalDateTime dateTime) {
+    public Alert(int id, String username, String description, LatLng location, Image photo, Date dateTime) {
         this.id = id;
         this.username = username;
         this.description = description;
@@ -46,11 +49,11 @@ public class Alert {
         this.description = description;
     }
 
-    public Location getLocation() {
+    public LatLng getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(LatLng location) {
         this.location = location;
     }
 
@@ -62,11 +65,11 @@ public class Alert {
         this.photo = photo;
     }
 
-    public LocalDateTime getDateTime() {
+    public Date getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
 }
