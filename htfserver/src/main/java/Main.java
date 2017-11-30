@@ -1,14 +1,9 @@
 import jdk.nashorn.internal.parser.JSONParser;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import spark.Request;
-import spark.Response;
-import spark.Route;
-
+import org.json.*;
+import spark.*;
 import java.awt.*;
 import java.sql.*;
 import java.util.*;
-import java.util.List;
 
 import static spark.Spark.*;
 
@@ -21,24 +16,6 @@ public class Main {
 
     public static void main(String[] args) {
         get("/hello", (req, res) -> "Hello World");
-        get("/dennis", (req, res) -> {
-            try {
-                Class.forName(JDBC_DRIVER);
-                Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-                String sql = "INSERT INTO users (username, password, admin) VALUES (?,?,?)";
-                PreparedStatement stmt = conn.prepareStatement(sql);
-                stmt.setString(1, "Dennis");
-                stmt.setString(2, "Dennis");
-                stmt.setBoolean(3, true);
-
-                stmt.executeUpdate();
-            }
-            catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-            return "Dennis toegevoegd?";
-        });
 
         get("/users", (req, res) -> getAllUsers(req, res));
 
