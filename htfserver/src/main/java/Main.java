@@ -15,6 +15,7 @@ public class Main {
     static final String PASS = "";
 
     public static void main(String[] args) {
+        // API Paths
         get("/hello", (req, res) -> "Hello World");
 
         get("/users", (req, res) -> getAllUsers(req, res));
@@ -50,7 +51,7 @@ public class Main {
         }
         catch (Exception e) {
             e.printStackTrace();
-            return "Oeps";
+            return "Oeps!";
         }
     }
 
@@ -74,9 +75,10 @@ public class Main {
             stmt.executeUpdate();
         }
         catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
+            return "Oeps!";
         }
-        return "User-Location toegevoegd?";
+        return "User-Location toegevoegd!";
     }
 
     private static Object getLatestLocations(Request req, Response res) {
@@ -93,10 +95,11 @@ public class Main {
             JSONArray jsonArray = new JSONArray();
             while (ids_results.next()) {
                 int id = ids_results.getInt("id");
-
                 PreparedStatement location_stmt = conn.prepareStatement(location_sql);
                 location_stmt.setInt(1, id);
+                
                 ResultSet location_results = location_stmt.executeQuery();
+
                 if (location_results.next()) {
                     jsonArray.put(new JSONObject()
                             .put("user_id", id)
@@ -110,7 +113,7 @@ public class Main {
         }
         catch (Exception e) {
             e.printStackTrace();
-            return "Oeps";
+            return "Oeps!";
         }
     }
 }
